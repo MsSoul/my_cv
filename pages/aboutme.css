@@ -1,0 +1,199 @@
+/* Scoped layout styles to prevent leaking into index layout configuration */
+.aboutme-wrapper {
+  max-width: 800px;
+  margin: 0 auto 40px auto; 
+  padding: 0 20px;
+  color: #333;
+}
+
+/* Header Container */
+.aboutme-h1 {
+  text-align: center;
+  margin: 2.5rem 0 0 0; 
+  color: #f37373;
+}
+
+.aboutme-h1 h1 {
+  margin: 0;
+  font-family: 'Brush Script MT', cursive; /* Applied cursive strictly to header script */
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+
+
+/* =================================
+   ABOUT ME HOVER CARD CAROUSEL LAYOUT
+   ================================= */
+
+.aboutme-content section {
+  background: rgb(241, 188, 188); /* White container color keeps your layout cards clean */
+  padding: 0;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #4a5568;
+  
+}
+
+/* Justify text alignment inside About and Objective cards */
+#about .content p, 
+#objective .content p {
+  text-align: justify;
+    text-indent: 30px;
+  
+}
+
+/* FIXED: Corrected selector and applied clear default properties */
+.aboutme-content section h2 {
+    text-align: center;
+  margin: 0;
+  padding: 15px 20px;
+  cursor: pointer;
+  background: #f37373;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: none;
+  transition: background 0.3s ease;
+}
+
+/* CONTENT CONTAINER DEFAULT SLIDED CLOSED STATE */
+.aboutme-content section .content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+/* CSS CARD INTERACTION TRIGGER HOVER TARGETING CONFIGURATION */
+.aboutme-content section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.aboutme-content section:hover .content {
+  max-height: 800px; /* Accommodates long list elements inside Education */
+  padding: 20px;
+}
+
+.aboutme-content section:hover h2 {
+  background: rgb(226, 76, 76); /* Distinct active header accent color */
+}
+
+/* Internal Inner Text Formats */
+.aboutme-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.aboutme-content p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.aboutme-content p:last-child {
+  margin-bottom: 0;
+}
+
+.aboutme-content .indented {
+  text-indent: 30px;
+  margin: 0.2rem 0;
+}
+
+.aboutme-content .double-indented {
+  text-indent: 60px; 
+  margin: 0.1rem 0;
+}
+
+.aboutme-content ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.aboutme-content ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .aboutme-wrapper {
+    padding: 0 10px;
+  }
+}
+
+
+/* ==========================================
+   PROJECTS PAGE LINK OVERRIDES 
+   ========================================== */
+
+/* Forces all anchors inside an h2 block on your layout to be white */
+.aboutme-content section h2 a,
+.aboutme-content section h2 a:link,
+.aboutme-content section h2 a:visited,
+.aboutme-content section h2 a:hover,
+.aboutme-content section h2 a:active {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  display: block;
+}
+
+/* Adds the underline indicator ONLY when hovering over the card */
+.aboutme-content section:hover h2 a {
+  text-decoration: underline !important;
+}
+
+/* Styling for the tech labels inside the project cards */
+.technologies {
+  font-size: 0.9rem;
+  color: #f37373; 
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   FORCE WORK EXPERIENCE LAYOUT (CRITICAL OVERRIDES)
+   ========================================================================== */
+
+/* 1. Force the layout container to behave */
+.aboutme-content .job-meta-row {
+  display: block !important;
+  width: 100% !important;
+  clear: both !important;
+  margin-bottom: 12px !important;
+}
+
+/* 2. Force Company Name to be Bold and Left-aligned */
+.aboutme-content .job-company {
+  float: left !important;
+  font-weight: 900 !important; /* Maximum thickness bold */
+  color: #333333 !important;
+  font-family: Arial, sans-serif !important;
+  padding: 0.5rem !important;
+}
+
+/* 3. Force Year to be Bold and Right-aligned */
+.aboutme-content .job-year {
+  float: right !important;
+  font-weight: 900 !important; /* Maximum thickness bold */
+  color: white !important;   /* Theme Pink */
+  font-family: Arial, sans-serif !important;
+}
+
+/* 4. Reset layout stream for subtitles and lists */
+.aboutme-content .department-subtitle {
+  clear: both !important;
+  font-style: italic !important;
+  color: #666 !important;
+  padding-top: 4px !important;
+}
+
+.aboutme-content section .content ul {
+  clear: both !important;
+  list-style-type: disc !important;
+  padding-left: 20px !important;
+  color: #4a5568 !important;
+}

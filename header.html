@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pretzil Joy Vivares</title>
+
+    <link rel="preload" as="image" href="assets/me/meee.jpg">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            position: relative;
+            background: url('assets/me/meee.jpg') no-repeat center center;
+            background-size: cover;
+            background-color: #000;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            min-height: 300px;
+        }
+
+        /* Dark overlay */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(243, 115, 115, 0.2); /* Custom transparent pink */
+            z-index: 0;
+        }
+
+        /* Keep content above overlay */
+        header * {
+            position: relative;
+            z-index: 1;
+        }
+
+        header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f37373;
+        }
+
+        header h1 {
+            margin: 0.5rem 0 0.2rem;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        header p.title {
+            margin: 0;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: white;
+            margin-top: 0.5rem;
+            
+        }
+
+        .contact-info a {
+            color: rgb(149, 195, 212);
+            text-decoration: none;
+            margin: 0 0.3rem;
+            text-shadow: #000 0 0 2px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            background-color: #f37373;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgb(226, 76, 76);
+        }
+
+        nav a.active {
+            background-color: rgb(236, 171, 171);
+            color: white;
+        }
+
+        /* Main viewport wrapper for loaded sub-pages */
+        #content {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+          /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .aboutme-wrapper {
+        padding: 0 10px;
+      }
+    }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/me/me.jpg" alt="Pretzil Joy Vivares">
+        <h1>Pretzil Joy Vivares</h1>
+        <p class="title">Software Developer</p>
+        
+        <!-- This container stays safe inside the header layout framework -->
+        <div id="contact-info"></div> 
+    </header>
+
+    <nav>
+        <a href="#" data-page="aboutme.html" class="active">About Me</a>
+        <a href="#" data-page="skills.html">Skills</a>
+        <a href="#" data-page="experience.html">Work Experience</a>
+        <a href="#" data-page="trainings.html">Trainings & Seminars</a>
+        <a href="#" data-page="projects.html">Projects</a>
+        <a href="#" data-page="activities.html">Recent Activities</a>
+        
+    </nav>
+
+    <!-- FIXED: Added missing main content injection container -->
+    <main id="content"></main>
+
+    <script>
+        // Helper function to safely pull HTML code snippets into layout slots
+        function loadPageContent(targetId, url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Could not fetch ${url}`);
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById(targetId).innerHTML = html;
+
+                    // Handle embedded script execution tags safely
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const scripts = doc.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript).remove(); 
+                    });
+                })
+                .catch(error => {
+                    document.getElementById(targetId).innerHTML = `<p style="color:red;">Error loading requested layout space.</p>`;
+                    console.error('Layout Error:', error);
+                });
+        }
+
+        // 1. Initial Page Startup Configuration
+        // Load contact information permanently inside header slot right away
+        loadPageContent('contact-info', 'mycontact.html');
+        // Load default landing page into the primary main viewport wrapper
+        loadPageContent('content', 'aboutme.html');
+
+        // 2. Click Navigation Handler Setup
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+
+                // Manage CSS active states safely
+                document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+
+                // Get target file pathway string
+                const page = this.getAttribute('data-page');
+
+                // Update viewport area dynamically while header data remains un-rendered
+                loadPageContent('content', page);
+            });
+        });
+    </script>
+</body>
+</html>

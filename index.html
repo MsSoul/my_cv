@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My CV</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('assets/me/cover1.PNG') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.65);
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            max-width: 1200px;
+            width: 90%;
+            padding: 40px;
+
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .welcome {
+            flex: 2;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .welcome h1 {
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+
+        .welcome p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .welcome button {
+            padding: 16px 35px;
+            font-size: 20px;
+            background-color: #f37373;
+            color: white;
+            border: none;
+            border-radius: 10px;
+
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .welcome button:hover {
+            background-color: rgb(236, 171, 171);
+        }
+
+        .image-side {
+            flex: 1.3;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-side img {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MAIN CONTENT -->
+    <div class="overlay">
+        <div class="container">
+
+            <div class="welcome">
+                <h1>Hi, I'm Pretzil</h1>
+
+                <p>
+                    Welcome to my portfolio website — explore my background,
+                    skills, trainings, and seminars.
+                </p>
+
+                <button onclick="location.href='body.html'">
+                CLICK TO KNOW ME BETTER
+                </button>
+            </div>
+
+            <div class="image-side">
+                <img src="assets/me/me2.png" alt="Pretzil">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+
+</body>
+
+</html>

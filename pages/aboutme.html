@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Pretzil Joy Vivares</title>
+  <link rel="stylesheet" href="pages/aboutme.css">
+</head>
+<body>
+
+  <div class="aboutme-wrapper">
+    <div class="aboutme-h1">
+      <h1>About Me</h1>
+    </div>
+    
+    <div class="aboutme-content">
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="content">
+          <p class="indent">Passionate software developer and graduate of Bachelor of Science in Computer Science, with experience in both web and mobile application development. I specialize in mobile development and am committed to creating ethical, user-centered solutions that promote societal well-being. As the eldest of 10 siblings, I value responsibility, leadership, and collaboration. My goal is to continuously learn and grow while developing applications that positively impact users’ lives and contribute to a better society.</p>
+        </div>
+      </section>
+
+      <section id="objective">
+        <h2>Objective</h2>
+        <div class="content">
+          <p class="indent">To become a proficient software developer, creating solutions that positively impact users' lives while ensuring their safety and well-being. My goal is to develop applications that are not only useful but also ethical, contributing to the betterment of society through innovative and responsible technology.</p>
+        </div>
+      </section>
+
+      <section id="personal-profile">
+        <h2>Personal Profile</h2>
+        <div class="content">
+          <ul>
+            <li><strong>Age:</strong> <span id="age" data-birthdate="1994-09-10"></span></li>
+            <li><strong>Gender:</strong> Female</li>
+            <li><strong>Height:</strong> 5’4</li>
+            <li><strong>Weight:</strong> 48 kilos</li>
+            <li><strong>Religion:</strong> Roman Catholic</li>
+            <li><strong>Marital Status:</strong> Single</li>
+            <li><strong>Dialect/s Spoken:</strong> Cebuano, Tagalog, English</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="interests">
+        <h2>Interests</h2>
+        <div class="content">
+          <ul>
+            <li>Creating Mobile Applications</li>
+            <li>Eating</li>
+            <li>Listening to Music</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Educational Attainment</h2>
+        <div class="content">
+          <h3>Tertiary</h3>
+          <p class="indented"><b>Bachelor of Science in Computer Science</b></p>
+          <p class="double-indented">Holy Trinity College of General Santos City</p>
+          <p class="double-indented"><i>Fiscal Daproza Avenue</i></p>
+          <p class="double-indented"><i>General Santos City, Philippines 9500</i></p>
+
+          <h3>Secondary</h3>
+          <p class="indented">Engracia L. Valdomar National High School</p>
+
+          <h3>Elementary</h3>
+          <p class="indented">Mabuhay Elementary School</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function calculateAge(birthDateString) {
+      const today = new Date();
+      const birthDate = new Date(birthDateString);
+
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+
+      return age;
+    }
+
+    function setAge() {
+      const ageEl = document.getElementById("age");
+      if (!ageEl) return;
+
+      const birthDate = ageEl.getAttribute("data-birthdate");
+      ageEl.textContent = calculateAge(birthDate);
+    }
+
+    document.addEventListener("DOMContentLoaded", setAge);
+    setAge(); // Immediate execution handler for page dynamic insertion injections
+  </script>
+</body>
+</html>

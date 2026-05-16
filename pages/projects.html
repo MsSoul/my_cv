@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Pretzil Joy Vivares</title>
+  <!-- Linked directly to your existing aboutme.css -->
+  <link rel="stylesheet" href="pages/aboutme.css">
+  
+  <style>
+    /* CHANGED: Links now use the exact same color as your h2 text (white) */
+    .aboutme-content section h2 a {
+      color: #ffffff; 
+      text-decoration: none;
+      display: block;
+    }
+    
+    /* Adds the underline effect back when hovering to show it's clickable */
+    .aboutme-content section:hover h2 a {
+      text-decoration: underline;
+    }
+    
+    .technologies {
+      font-size: 0.9rem;
+      color: #f37373; /* Subtle theme color accent for the tech list */
+      margin-bottom: 0.8rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Using aboutme classes so the styling attaches perfectly -->
+  <div class="aboutme-wrapper">
+    <div class="aboutme-h1">
+      <h1>Projects</h1>
+    </div>
+    
+    <div class="aboutme-content">
+      
+      <!-- PROJECT 1 -->
+      <section id="adts">
+        <h2><a href="pages/adts.html">ADTS (Asset Distribution Tracking System)</a></h2>
+        <div class="content">
+          <p class="technologies">Flutter, Dart, Node.js, MySQL</p>
+          <p>Developed a mobile asset management system for the Local Government Unit (LGU) of General Santos City — City Accountant's Office. Implemented real-time asset tracking, OTP-based secure authentication, and an intuitive UI for efficient management of asset transfer, borrowing, lending, and return processes.</p>
+        </div>
+      </section>
+
+      <!-- PROJECT 2 -->
+      <section id="famie">
+        <h2><a href="pages/famie.html">Famie and FamKid (Parental Control Applications)</a></h2>
+        <div class="content">
+          <p class="technologies">Flutter, Dart, Node.js, MongoDB Atlas, Heroku</p>
+          <p>Developed as part of the thesis "Optimizing Screen Time Management For Children's Devices: Leveraging Token Bucket And Time-Based Algorithms In A Famie Parental Control System," Famie (for parents) and FamKid (for children) are mobile apps that promote healthy digital habits using token bucket and time-based algorithms for screen time control, with secure device pairing via QR code scanning.</p>
+        </div>
+      </section>
+
+      <!-- PROJECT 3 -->
+      <section id="cete-quiz">
+        <h2><a href="pages/cete-quiz.html">CETE Quiz Game</a></h2>
+        <div class="content">
+          <p class="technologies">HTML, CSS, Node.js, MongoDB</p>
+          <p>Created for our College intramurals event to introduce participants to web application development. Developed a dynamic quiz game platform featuring user authentication, real-time scoring, and a MongoDB database for managing quizzes and results.</p>
+        </div>
+      </section>
+
+      <!-- PROJECT 4 -->
+      <section id="tictactoe">
+        <h2><a href="pages/tictactoe.html">TicTacToe Mobile Game</a></h2>
+        <div class="content">
+          <p class="technologies">Flutter, Dart, Node.js, MongoDB</p>
+          <p>Designed a simple two-player TicTacToe mobile game to showcase mobile app development and demonstrate core Flutter UI practices and game state management during a College Open House department exhibit.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>

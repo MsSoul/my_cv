@@ -1,0 +1,137 @@
+/* ==========================================================================
+   SKILLS PAGE STYLES (Scoped to match the uniform pink theme)
+   ========================================================================== */
+
+body.skills-page {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Skills Main Title Section */
+.skills-main-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.skills-main-wrapper h1 {
+  text-align: center;
+  margin: 2.5rem 0 0 0;
+  color: #f37373;
+  font-family: 'Brush Script MT', cursive; /* Matches your About Me title font style */
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+/* Page Outer Wrapper */
+.skills-wrapper {
+  max-width: 800px;
+  margin: 0 auto 40px auto; /* Center horizontally + space below */
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   SLIDING HOVER CARD CONFIGURATIONS
+   ========================================================================== */
+
+.skills-content section {
+  background: #fff;
+  padding: 0; /* Clear padding so the h2 header strip sits flush against edges */
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #4a5568;
+}
+
+/* Card Header Strip (Pink theme) */
+.skills-content section h2 {
+  margin: 0;
+  padding: 15px 20px;
+  text-align: center;
+  background: #f37373;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Dropdown Content Frame - Closed by default */
+.skills-content section .content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: rgb(241, 188, 188);
+}
+
+/* ==========================================================================
+   MOUSE HOVER INTERACTION TRIGGERS
+   ========================================================================== */
+
+.skills-content section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: rgb(241, 188, 188);
+}
+
+/* Slides the card open on hover */
+.skills-content section:hover .content {
+  max-height: 1200px; /* Large enough threshold to contain technical sublists */
+  padding: 20px;
+  color: #4a5568;
+  
+}
+
+/* Darkens header tab on card focus hover */
+.skills-content section:hover h2 {
+  background: rgb(226, 76, 76);
+}
+
+/* ==========================================================================
+   INTERNAL CARD TEXT FORMATTING
+   ========================================================================== */
+
+.skills-content h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: #f37373; /* Subtle pink theme subtitle accent code */
+  font-size: 1.1rem;
+}
+
+.skills-content p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.skills-content ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin: 0 0 1rem 0;
+}
+
+.skills-content ul:last-child {
+  margin-bottom: 0;
+}
+
+.skills-content ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.link {
+  color: lightblue;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .skills-wrapper {
+    padding: 0 10px;
+  }
+}
