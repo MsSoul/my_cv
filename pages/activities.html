@@ -1,332 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pretzil Joy Vivares - Recent Activities</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-        }
+    <!-- Points directly to your separated Activities stylesheet -->
+    <link rel="stylesheet" href="pages/activities.css">
 
-
-        .main-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px 15px;
-        }
-
-        .activity-container {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        .header {
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            background-color: #e6f3ff;
-            padding: 0.5rem;
-            border-radius: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 1rem;
-        }
-
-        td {
-            vertical-align: top;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .certificate-img {
-            width: 100%;
-            max-width: 600px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .photo-row {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .photo-row img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .description {
-            text-align: justify;
-            line-height: 1.6;
-        }
-
-        h1 {
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="header"></div>
-
-    <div class="main-wrapper">
-        <h1>Recent Activities</h1>
-
-        <div class="activity-container">
-            <div class="header">
-                PSITS XII MOST OUTSTANDING ITE STUDENT FOR SY 2024-2025<BR>
-                (13TH PSITS REGIONAL CONVENTION)
-
-            </div>
-
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act1.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        Receiving the PSITS XII Most Outstanding ITE Student for School Year 2024–2025 during the 13th
-                        PSITS Regional Convention was a truly humbling and unforgettable moment in my academic journey.
-                        Being awarded this prestigious recognition among representatives from various institutions
-                        across Region XII affirmed the hard work, dedication, and passion I’ve poured into my studies,
-                        leadership, and active participation in Computer Science and Information Technology -related
-                        events and initiatives. The medal I received symbolizes not only my personal achievement but
-                        also the support and guidance of my love ones, mentors, peers, and institution who have
-                        continuously inspired me to strive for excellence in the field of CS and IT.
-                    </td>
-                </tr>
-            </table>
+    <!-- Renamed wrapper to align with your modular structure -->
+    <div class="section-activities-wrapper">
+        <div class="activities-main-h1">
+            <h1>Recent Activities</h1>
         </div>
 
-        <div class="activity-container">
-            <div class="header">
-                EARTHQUAKE DRILL at LGU-GENSAN- CITY ACCOUNTANT’S OFFICE<br>
-                (MARCH 13,2025 -CITY ACCOUNTANT’S OFFICE- CITY HALL)
-            </div>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act2.png" alt="Leadership Certificate" class="certificate-img" />
-                        <img src="assets\trainings\act3.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        On March 13, 2025, I actively participated in the Earthquake Drill conducted at the City
-                        Accountant’s Office, City Hall, General Santos City. The drill was organized to enhance
-                        preparedness and ensure the safety of all employees in the event of an earthquake. During the
-                        exercise, I followed proper safety protocols such as “Drop, Cover, and Hold On,” and
-                        participated in the orderly evacuation to designated safe zones. This practical experience
-                        reinforced the importance of being vigilant and well-prepared for natural disasters, helping to
-                        build a culture of safety and quick response within the workplace. The drill not only heightened
-                        my awareness of emergency procedures but also strengthened our team’s ability to work together
-                        calmly and efficiently under pressure.
-                    </td>
-                </tr>
-            </table>
+        <div class="activities-three-grid">
+
+            <!-- Card 13: CAPSTONE PROPOSAL DEFENSE PANELIST -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act24.jpg" alt="College of Engineering and Technology Education Defense Panel" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/panelist.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>RESEARCH & CAPSTONE PROPOSAL DEFENSE PANELIST - HTC CETE</h2>
+                </a>
+                <p class="activity-date-tag">April 24, 2026</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/panelist.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 12: GRADE 12 STEM RESEARCH ADVISER -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act22.jpg" alt="Grade 12 STEM Final Research Defense" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/adviser.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>RESEARCH ADVISER - GRADE 12 STEM FINAL DEFENSE & BEST RESEARCH NOMINATION</h2>
+                </a>
+                <p class="activity-date-tag">Feb. 23, 2026</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/adviser.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 11: NATIONAL STATISTICS MONTH RESEARCH FORUM -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act21.jpg" alt="National Statistics Month Research Forum Finalist" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/forum.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>TOP 10 RESEARCH PAPER FINALIST - 3RD GENERAL SANTOS CITY NATIONAL STATISTICS MONTH RESEARCH FORUM</h2>
+                </a>
+                <p class="activity-date-tag">Oct. 3, 2025</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/forum.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 10: AJSTS RESEARCH PUBLICATION -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act18.png" alt="AJSTS Research Publication Feature" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/publication.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>INTERNATIONAL RESEARCH PUBLICATION - AMERICAN JOURNAL OF SMART TECHNOLOGY AND SOLUTIONS (AJSTS)</h2>
+                </a>
+                <p class="activity-date-tag">June 2025</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/publication.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 9: LGU-GENSAN OJT CULMINATION EXEMPLARY AWARD -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act16.jpg" alt="LGU-Gensan OJT Exemplary Award" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/exemplary.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>LGU-GENSAN OJT CULMINATION - EXEMPLARY AWARD RECIPIENT</h2>
+                </a>
+                <p class="activity-date-tag">June 25, 2025</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/exemplary.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 14: CETE OJT CULMINATION OUTSTANDING AWARD -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act28.jpg" alt="CETE OJT Culmination Outstanding OJT Award" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/outstanding.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>MOST OUTSTANDING OJT (BSCS) AWARD - CETE OJT CULMINATION</h2>
+                </a>
+                <p class="activity-date-tag">June 5, 2025</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/outstanding.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+                      
+            <!-- Card 1: PSITS XII MOST OUTSTANDING ITE STUDENT -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act1.png" alt="Leadership Certificate" class="activity-main-photo" />
+                </div>
+                <a href="#" onclick="loadPage('../recentActivity/psitsOutstanding.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>PSITS XII MOST OUTSTANDING ITE STUDENT FOR SY 2024-2025 (13TH PSITS REGIONAL CONVENTION)</h2>
+                </a>
+                <p class="activity-date-tag">SY 2024 - 2025</p>
+                <a href="#" onclick="loadPage('../recentActivity/psitsOutstanding.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 2: EARTHQUAKE DRILL AT LGU-GENSAN -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <!-- Displaying the primary action image for the card slot view -->
+                    <img src="../recentActivity/images/act2.png" alt="Earthquake Drill Participation" class="activity-main-photo" />
+                </div>
+                
+                <!-- Link with your dynamic Over-spill Title Engine applied -->
+                <a href="#" onclick="loadPage('../recentActivity/earthquakeDrill.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>EARTHQUAKE DRILL AT LGU-GENSAN - CITY ACCOUNTANT’S OFFICE</h2>
+                </a>
+                <p class="activity-date-tag">March 13, 2025</p>
+                <a href="#" onclick="loadPage('../recentActivity/earthquakeDrill.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 3: SYMPOSIUM ON CYBERSECURITY AND DATA PRIVACY -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act4.png" alt="DICT Cybersecurity Symposium Event" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/cybersecuritySymposium.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>SYMPOSIUM ON CYBER SECURITY AND DATA PRIVACY BY DICT R12</h2>
+                </a>
+                <p class="activity-date-tag">Feb. 26, 2025</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/cybersecuritySymposium.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 4: HTC OPEN HOUSE 2024 -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act6.png" alt="HTC Open House Project Showcase" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/openhouse.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>HTC OPEN HOUSE 2024 PROJECT EXHIBITION</h2>
+                </a>
+                <p class="activity-date-tag">Nov. 21-29, 2024</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/openhouse.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 5: COMMUNITY OUTREACH DAY -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act8.png" alt="HTC Community Outreach Day Group" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/outreach.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>HTC 40TH FOUNDATION ANNIVERSARY COMMUNITY OUTREACH DAY</h2>
+                </a>
+                <p class="activity-date-tag">Nov. 16, 2024</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/outreach.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 6: SOCI X CETE DONATION TO ALABEL NATIONAL HIGH SCHOOL -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act10.png" alt="Computer Set Donation Turnover" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/donation.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>SOCI X CETE COMPUTER DONATION TO ALABEL NATIONAL HIGH SCHOOL</h2>
+                </a>
+                <p class="activity-date-tag">Aug. 16, 2024</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/donation.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 7: LABAN GIRL POWER - KAPIHAN NI JUANA -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act12.png" alt="Laban Girl Power Women's Month Event" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/power.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>LABAN GIRL POWER - KAPIHAN NI JUANA (WOMEN'S MONTH CELEBRATION)</h2>
+                </a>
+                <p class="activity-date-tag">March 21, 2024</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/power.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
+            <!-- Card 8: CAREER AWARENESS DAY -->
+            <section class="individual-activity-card">
+                <div class="single-activity-photo-frame">
+                    <img src="../recentActivity/images/act14.png" alt="Career Awareness Day Event Showcase" class="activity-main-photo" />
+                </div>
+                
+                <a href="#" onclick="loadPage('../recentActivity/career.html'); return false;" class="activity-photo-link overlay-trigger">
+                    <h2>IBPAP X DICT CAREER AWARENESS DAY</h2>
+                </a>
+                <p class="activity-date-tag">March 12, 2024</p>
+
+                <!-- Left-aligned navigation button -->
+                <a href="#" onclick="loadPage('../recentActivity/career.html'); return false;" class="activity-card-button">View Details</a>
+            </section>
+
         </div>
-
-        <div class="activity-container">
-            <div class="header">
-                SYMPOSIUM ON CYBER SECURITY AND DATA PRIVACY seminar conducted by DICT R12 - SAR. PROV (& GENSAN)<br>
-                (FEB. 26, 2025 - EMC 3 - JTA BUILDING HTC)
-
-            </div>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act4.png" alt="Leadership Certificate" class="certificate-img" />
-                        <img src="assets\trainings\act5.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        I was given the chance to be part of one of the organizers of the Symposium on Cybersecurity and
-                        Data Privacy held by DICT Sarangani–GenSan last February 26, 2025, at EMC 3, JTA Building, Holy
-                        Trinity College. First- and second-year CETE students attended the event for a very informative
-                        discussion on internet safety, which featured topics on the E-Gov app, RA 10173 (Data Privacy
-                        Act), and RA 10175 (Cybercrime Prevention Act). As a member of the organizing team, I
-                        facilitated the smooth operation of the program and assisted in spreading the awareness of
-                        cybersecurity to participants. The event focused on responsible internet use, best practices for
-                        data protection, and being aware in today's digital age—reminding everyone to "Think Before You
-                        Click" for a safer internet experience.
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="activity-container">
-            <div class="header">
-                HTC OPEN HOUSE 2024<br>
-                (NOV. 21-29,2024/ HTC)
-            </div>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act6.png" alt="Leadership Certificate" class="certificate-img" />
-                        <img src="assets\trainings\act7.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        During the HTC Open House 2024, held from November 21 to 29, 2024 at HTC, I participated as a
-                        representative of our department by showcasing two of my programming projects: the CETE Quiz
-                        Game, a web-based quiz game focused on web design concepts, and a Tic Tac Toe mobile app game.
-                        Throughout the event, I presented these interactive games to students, teachers, and visitors,
-                        explaining the development process, design principles, and the technologies used behind each
-                        project. I discussed the core logic, user interface design, and the programming languages and
-                        frameworks applied—such as HTML, CSS, JavaScript, and Flutter. This opportunity allowed me to
-                        demonstrate not only my technical skills but also my ability to communicate and explain complex
-                        coding concepts to a broader audience.
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="activity-container">
-            <div class="header">
-                HTC'S 4TH FOUNDATION ANNIVERSARY
-                COMMUNITY OUTREACH DAY<br>
-                (NOV. 16,2024 - PUROK SARIF MUCSIN, BRGY. BALUAN, GENERAL SANTOS CITY)
-
-            </div>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act8.png" alt="Leadership Certificate" class="certificate-img" />
-                        <img src="assets\trainings\act9.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        On November 16, 2024, I took part in the HTC 40th Foundation Anniversary Community Day as a
-                        representative of the College of Engineering and Technology Education (CETE). The outreach
-                        activity was held at Purok Shariff Mucsins, Brgy. Baluan, General Santos City, in collaboration
-                        with HTC-SSC, CBMA, CCJE, TESDA, and The Quill Publication. As part of this community
-                        engagement, I helped facilitate and support seminars such as the Basic Hygiene Seminar for
-                        children and the Disaster Risk Reduction and Management (DRRM) Seminar for members of the Fisher
-                        Folks Association. This meaningful experience deepened my appreciation for civic involvement and
-                        highlighted the importance of using education and teamwork to positively impact others.
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="activity-container">
-            <div class="header">
-                SOCI X CETE DONATION TO ALABEL NATIONAL HIGH SCHOOL <br>
-                (AUG. 16,2024 I ALABEL NATIONAL HIGH SCHOO, ALABEL SAR. PROV.)
-            </div>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act10.png" alt="Leadership Certificate" class="certificate-img" />
-                        <img src="assets\trainings\act11.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        On August 16, 2024, I had the honor of participating in the SOCI x CETE donation event at Alabel
-                        National High School, Sarangani Province, where our department, the College of Engineering and
-                        Technology Education (CETE), in collaboration with SOCI, donated five new computer sets to
-                        support the school’s learning resources. Being selected to assist in bringing this kind
-                        contribution was indeed humbling and uplifting, as it paved the way for learners to engage with
-                        new technology and better their learning experience. This activity not only showcased our
-                        dedication to community service but also reaffirmed the value of closing learning gaps through
-                        cooperation and innovation.
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="activity-container">
-            <div class="header">
-                LABAN GIRL POWER- KAPIHAN NI JUANA<br>
-                (March 21, 2024-VERANZA, GSC)
-
-            </div>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act12.png" alt="Leadership Certificate" class="certificate-img" />
-                        <img src="assets\trainings\act13.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        I participated in the Women's Month event titled “Laban Girl Power: Kapehan ni Juana” held at
-                        Veranza Mall, General Santos City, on March 21, 2024. The event served as a meaningful platform
-                        to celebrate the strength, resilience, and contributions of women in various sectors of society.
-                        Through open discussions, inspiring stories, and community engagement, the activity empowered
-                        participants to advocate for gender equality and women's rights. Being part of this celebration
-                        allowed me to reflect on the importance of women’s roles in nation-building and deepened my
-                        commitment to supporting initiatives that uplift and empower women in all aspects of life.
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="activity-container">
-            <div class="header">
-                CAREER AWARENESS DAY<BR>
-                (MARCH 12,2024 - VERANZA, GSC)
-
-
-            </div>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <img src="assets\trainings\act14.png" alt="Leadership Certificate" class="certificate-img" />
-                        <img src="assets\trainings\act15.png" alt="Leadership Certificate" class="certificate-img" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="description">
-                        I participated in the Career Awareness Day held on March 12, 2024, at the Veranza Activity
-                        Center, Veranza Drive, General Santos City. The event was organized by the IT and Business
-                        Process Association of the Philippines (IBPAP), in partnership with the Department of
-                        Information and Communications Technology (DICT) and the Department of Trade and Industry (DTI).
-                        This participation demonstrates my active engagement in exploring potential career paths and
-                        opportunities, as well as gaining valuable insights into the IT-BPM industry and other emerging
-                        fields. It was a meaningful experience that broadened my understanding of workforce demands and
-                        helped me align my skills and interests with the needs of today’s job market.
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <!-- You can duplicate the block above for more activities -->
     </div>
-
+        
     <div id="footer"></div>
 
-    <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('header').innerHTML = data);
-
-        fetch('footer.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('footer').innerHTML = data);
-    </script>
-</body>
-
-</html>

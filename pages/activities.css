@@ -1,0 +1,188 @@
+/* Container Layout */
+.section-activities-wrapper {
+  max-width: 800px;
+  margin: 0 auto 40px auto; 
+  padding: 0 20px;
+  color: #333;
+}
+
+.activities-main-h1 h1 {
+  font-family: 'Brush Script MT', cursive; /* Applied cursive strictly to header script */
+  font-weight: normal;
+  font-size: 3rem;
+  color: #f37373;
+  text-align: center;
+}
+
+/* 3-Column Grid Layout Setup */
+.activities-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+
+
+/* Individual Activity Box Card */
+.individual-activity-card {
+  background: rgb(239, 210, 210);
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 250px;
+  height: 350px;  /* Slightly adjusted to accommodate button + paragraph content elements */
+  box-sizing: border-box; 
+}
+
+.individual-activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Clean Link Styling (removes underline/blue text) */
+.activity-photo-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.activity-photo-link h2 {
+  font-size: 1.15rem;
+  color: #2d3748;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+  
+  /* Standardizes titles that spill over onto two lines */
+  height: 3.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.activity-photo-link:hover h2 {
+  color: #f37373; /* Highlights title on hover */
+}
+
+/* Photo Frame & Image Control */
+.single-activity-photo-frame {
+  width: 100%;
+  height: 160px; /* Keeps picture aspect boxes uniform inside the grid elements */
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid #edf2f7;
+  background-color: #f7fafc;
+}
+
+.activity-main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Perfectly fits and crops image inside the box frame */
+}
+
+/* Subtitles & Descriptions */
+.activity-date-tag {
+  font-size: 0.88rem;
+  color: #f37373;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0.25rem;
+  margin-bottom: 0.8rem;
+}
+
+.activity-paragraph-text {
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 0.88rem;
+  color: #4a5568;
+  margin: 0 mb-2;
+
+  /* Line-Clamping restriction engine: Caps description perfectly to 4 lines maximum */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+  text-overflow: ellipsis; /* Appends '...' if overflow occurs */
+}
+
+/* Placeholder box styling for upcoming items */
+.placeholder-style-card {
+  border: 2px dashed #cbd5e1;
+  background: #f8fafc;
+}
+
+.placeholder-style-card h2 {
+  font-size: 1.2rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-photo-slot {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Styling for the navigation button */
+.activity-card-button {
+  display: inline-block;
+  align-self: flex-end; 
+  text-align: center;
+  text-decoration: none;
+  background-color: #f37373;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  
+  /* Pushes button to bottom boundary of container block area context */
+  margin-top: auto; 
+}
+
+.activity-card-button:hover {
+  background-color: rgb(236, 171, 171);
+}
+
+.activity-card-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .activities-three-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Drops to 2 columns on tablets */
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .activities-three-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 item per row on mobile */
+    gap: 1.5rem;
+  }
+}
+
+
+/* Responsive Breakpoints */
+@media (max-width: 480px) {
+    .activity-image-source {
+        font-size: 0.75rem;  /* Slightly smaller font size on very small screens */
+    }
+}
