@@ -1,0 +1,256 @@
+/* ==========================================================================
+   1. CORE WRAPPER STYLES (Page Structure)
+   ========================================================================== */
+.project-detail-wrapper {
+  max-width: 900px;
+  margin: 0 auto; 
+  color: #333;
+}
+
+.project-detail-h1 h1 {
+  font-family: 'Brush Script MT', cursive;
+  font-weight: normal;
+  font-size: 3rem;
+  text-align: center;
+  color: #f37373; 
+  margin: 0 0 1.5rem 0; 
+}
+
+.project-detail-content {
+  background-color: rgb(236, 171, 171); 
+  border-radius: 8px;
+  overflow: hidden; 
+}
+
+/* ==========================================================================
+   2. PROJECT HEADER & NARRATIVE STYLES
+   ========================================================================== */
+.project-detail-header {
+  text-align: center;
+  background-color: #f37373;
+  padding: 1rem; 
+  border-radius: 0; 
+}
+
+.project-detail-header h2 {
+  font-family: Arial, sans-serif !important;
+  font-size: 1.4rem;
+  color: #ffffff; 
+  margin: 0 0 0.25rem 0; 
+}
+
+.project-detail-date {
+  font-family: Arial, sans-serif !important;
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.project-narrative-content {
+  padding: 1.5rem 1.25rem; 
+}
+
+.project-narrative-content p {
+  font-family: Arial, sans-serif !important;
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #4a5568;
+  margin: 0 0 1rem 0; 
+  text-indent: 30px;
+}
+
+.project-narrative-content p:last-child {
+  margin-bottom: 0; 
+}
+
+/* ==========================================================================
+   3. SEPARATED MEDIA GRIDS (Portrait 4xRow & Full-Width Landscape)
+   ========================================================================== */
+.gallery-title {
+  color: white !important; /* Changed from white to match the theme color */
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2rem; /* Adds balanced spacing right below the tech info */
+  margin-bottom: 1rem;
+}
+
+/* Remove default extra spacing since it's inside the border now */
+.project-media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0; /* Changed from 1.5rem to 0 to align flush with the tech text */
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* Portrait Grid - 4 pictures per row */
+.project-portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px; /* Base structural width alignment */
+}
+
+.project-portrait-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; 
+  background-color: rgba(255, 255, 255, 0.4); 
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Landscape Layout - Inherits identical max-width to look perfectly aligned */
+.project-landscape-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 800px; /* Matches the portrait grid width exactly */
+}
+
+.project-landscape-container img {
+  width: 100%;
+  height: auto; /* Preserves natural landscape dimensions */
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================================================
+   4. RIGHT-ALIGNED INTERACTIVE BACK BUTTON
+   ========================================================================== */
+.bottom-button {
+  width: 100%;
+  max-width: 900px;     /* Matches the exact width of your project-detail-wrapper */
+  margin: 0 auto;       /* Centers this container perfectly on the screen */
+  box-sizing: border-box;
+}
+
+.bottom-navigation-bar {
+  border-top: 1px solid rgba(226, 232, 240, 0.4);
+  padding: 1rem 10px 0 10px; /* Added 10px side padding to match your tech container's side margins */
+  margin-top: 1.5rem;        /* Pushes the button bar cleanly below the content card */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Keeps the button pushed to the right side */
+  box-sizing: border-box;
+}
+
+.back-to-dashboard-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f37373;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS (Mobile Optimization)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .project-detail-h1 h1 {
+    font-size: 2rem;
+  }
+
+  /* Drop to 2 portrait screens per row on tablets */
+  .project-portrait-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Fallback to clean 1-column stack on compact mobile viewports */
+  .project-portrait-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Image Source Link Styling */
+.project-image-source {
+    display: block;
+    margin-left: 20px !important;  
+    margin-right: 20px !important; 
+    margin-top: 15px !important;
+    font-size: 0.85rem !important;
+    font-style: italic !important;
+    color: #666666 !important;     
+    text-indent: 20px;
+}
+
+.project-image-source a, 
+.project-image-source a:visited,
+.project-image-source a:link {
+    color: #777777 !important;     
+    text-decoration: none !important;
+    word-break: break-all !important; 
+}
+
+.project-image-source a:hover {
+    color: #333333 !important;     
+    text-decoration: underline !important;
+}
+
+
+/* High-visibility custom border box for the tech stack */
+.tech-use-container {
+  background: transparent;          
+  border: 2px solid #f37373;        
+  padding: 1rem 1.5rem;             /* Reduced top/bottom padding from 1.2rem to 1rem */
+  margin: 0.75rem 10px 1.2rem 10px; /* Reduced vertical margins (Top: 0.75rem, Bottom: 1.2rem) */
+  border-radius: 8px;               
+}
+  
+  .tech-main-title {
+    font-size: 1.25rem;
+    color: White;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    align-self: center; /* Centers the title within the bordered box */
+  }
+  
+  .tech-grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .tech-column {
+    flex: 1;
+    min-width: 140px; /* Ensures grid columns stack cleanly on small phone viewports */
+    margin-bottom: 0.5rem;
+  }
+  
+  .tech-column-label {
+  display: block;
+  font-weight: bold;
+  color: #f37373; 
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+}
+  
+  .tech-column-value {
+    color: #4a5568;
+    font-size: 0.95rem;
+  }

@@ -125,12 +125,11 @@
   }
 }
 
-
 /* ==========================================
-   PROJECTS PAGE LINK OVERRIDES 
+   PROJECTS PAGE LINK OVERRIDES (FIXED ALIGNMENT)
    ========================================== */
 
-/* Forces all anchors inside an h2 block on your layout to be white */
+/* Forces the link box to center its contents (logo + text) perfectly */
 .aboutme-content section h2 a,
 .aboutme-content section h2 a:link,
 .aboutme-content section h2 a:visited,
@@ -138,11 +137,15 @@
 .aboutme-content section h2 a:active {
   color: #ffffff !important;
   text-decoration: none !important;
-  display: block;
+  display: flex !important;          /* Turned block into flex */
+  align-items: center !important;     /* Centers logo and text vertically */
+  justify-content: center !important; /* Centers logo and text horizontally in the box */
+  gap: 12px !important;               /* Creates clean spacing between logo and text */
+  width: 100%;
 }
 
 /* Adds the underline indicator ONLY when hovering over the card */
-.aboutme-content section:hover h2 a {
+.aboutme-content section:hover h2 a span {
   text-decoration: underline !important;
 }
 
@@ -154,6 +157,17 @@
   font-weight: bold;
 }
 
+/* Fixed size & explicit aspect ratio guarantees it stays a perfect circle */
+.project-logo {
+  width: 1.4em !important;           /* Scales exactly with your font-size */
+  height: 1.4em !important;          /* Keeps a perfect 1:1 ratio with text */
+  aspect-ratio: 1 / 1 !important; 
+  border-radius: 50% !important;  
+  object-fit: cover !important;   
+  flex-shrink: 0 !important;      
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Clean white border against pink header */
+  background-color: rgba(255, 255, 255, 0.1);
+}
 /* ==========================================================================
    FORCE WORK EXPERIENCE LAYOUT (CRITICAL OVERRIDES)
    ========================================================================== */

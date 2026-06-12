@@ -135,3 +135,62 @@ body.skills-page {
     padding: 0 10px;
   }
 }
+
+/* ==========================================================================
+   Category Layout Styling 
+   ==========================================================================*/
+.tech-category-section {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.tech-category-title {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+/* Force exactly 3 columns per grid */
+.tech-badges-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Individual wrapper for image + title text below it */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Updated icon styling with white background and border */
+.tech-icon {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100px;
+  height: 100px; 
+  box-sizing: border-box; 
+}
+
+.tech-label {
+  font-size: 1rem;
+  font-weight: 800;
+  display: block;
+}
+
+/* Hover effect: zooms the icon and highlights the border */
+.tech-item:hover .tech-icon {
+  transform: scale(1.1);
+  border-color: #a0a0a0;       /* Darkens the border slightly on hover */
+}
