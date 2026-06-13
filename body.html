@@ -7,18 +7,26 @@
        
     <style>
         body {
-            margin: 0;
-            font-family: 'Brush Script MT', cursive;
-        }
+        margin: 0;
+        font-family: 'Brush Script MT', cursive;
+    }
 
-        #content {
-            padding: 2rem;
-        }
+    /* UPDATED: Hide content by default and prepare fade-in animation */
+    #content {
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+    }
 
-        nav a.active {
-            background: #666;
-            color: whitesmoke;
-        }
+    /* NEW: This class will be added via JS once CSS is injected */
+    #content.visible {
+        opacity: 1;
+    }
+
+    nav a.active {
+        background: #666;
+        color: whitesmoke;
+    }
 
         /* ====================================
            TOPIC DROPDOWN STYLES (Kept intact)
