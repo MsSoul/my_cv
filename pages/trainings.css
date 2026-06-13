@@ -48,16 +48,18 @@
   color: inherit;
   display: block;
 }
+
+/* FIXED & MERGED DUPLICATE: Line-Clamping restriction engine */
 .training-paragraph-text {
   text-align: justify;
   line-height: 1.6;
-  font-size: 0.92rem;
+  font-size: 0.95rem; /* Standardized to your preferred sizing */
   color: #4a5568;
   margin: 0;
 
-  /* FIX 3: Line-Clamping restriction engine */
   display: -webkit-box;
   -webkit-line-clamp: 4; /* Caps description text perfectly to 4 lines maximum */
+  line-clamp: 4;         /* ADDED: Standard property for full cross-browser compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden; 
   text-overflow: ellipsis; /* Appends the beautiful '...' suffix if code overflow occurs */
@@ -76,6 +78,7 @@
   height: 3.2rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;         /* ADDED: Standard property for full cross-browser compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -108,14 +111,6 @@
   text-align: center;
   margin-top: 0.25rem;
   margin-bottom: 1.2rem;
-}
-
-.training-paragraph-text {
-  text-align: justify;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  color: #4a5568;
-  margin: 0;
 }
 
 /* Placeholder box styling for upcoming items */
