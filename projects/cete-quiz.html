@@ -1,60 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ADTS Project - Pretzil Joy Vivares</title>
-  <style>
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      font-family: Arial, sans-serif;
-      color: #222;
-    }
-    h2 {
-      color: #333;
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-    p {
-      line-height: 1.6;
-    }
-    a.back-link {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #0056b3;
-      text-decoration: none;
-    }
-    a.back-link:hover {
-      text-decoration: underline;
-    }
-          * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-          font-family: Arial, sans-serif;
-  }
-  </style>
-</head>
-<body>
+<link rel="stylesheet" href="../projects/projects.css">
 
+<div class="project-detail-wrapper">
+    <div class="project-detail-h1">
+        <h1>Project Details</h1>
+    </div>
+  
+    <div class="project-detail-content">
+        <section id="cete-quiz-project">
+          
+            <section class="project-detail-header">
+                <h2>CETE QUIZ GAME</h2>
+                <div class="project-detail-date">Full-Stack Development, Event Deployment &amp; Department Showcase</div>
+            </section>
 
-  <main>
-    <h2>CETE Quiz Game</h2>
-    <img src="images/adts.png" alt="ADTS Project Screenshot" />
-    <p><strong>Technologies:</strong> HTML, CSS, Node.js, MongoDB</p>
-    <p>Created for our College intramurals event to introduce participants to web application development. Developed a dynamic quiz game platform featuring user authentication, real-time scoring, and a MongoDB database for managing quizzes and results.</p>
-    <a href="../projects.html" class="back-link">← Back to Projects</a>
-  </main>
+            <article class="project-narrative-content">
+                <p>
+                    The <strong>CETE Quiz Game</strong> is an interactive, full-stack web application designed and engineered to gamify learning and introduce participants to the fundamentals of modern web development. Originally conceptualized and deployed as a competitive event attraction, the platform balances high-performance real-time scoring mechanics with an accessible UI/UX.
+                </p>
+                <p>
+                    Built with a robust architectural backend, the system handles multi-user database transactions simultaneously. Following its success in internal engagement, the web application was selected by administration to serve as a premier technical demonstration representing the capabilities and engineering standards of the Computer Science and IT department.
+                </p>
 
-  <div id="footer-placeholder"></div>
+                <div class="project-narrative-subtitle">Key Event Milestones</div>
+                <ul class="project-narrative-list">
+                    <li>
+                        <strong>College Intramurals 2024 Launch:</strong> Originally built and deployed for our College Intramurals event. It successfully served as an interactive tournament module to introduce students and participants to the core logic behind dynamic web application development.
+                    </li>
+                    <li>
+                        <strong>Departmental Open House Showcase 2024:</strong> Selected as a centerpiece display for the school-wide Open House. Visiting students from outside schools interacted firsthand with the live system, using the game mechanics to learn how web servers, reactive designs, and backend databases connect seamlessly in real-world scenarios.
+                    </li>
+                </ul>
 
-</body>
-</html>
+                <div class="project-narrative-subtitle">Core Features &amp; Architecture</div>
+                <p>
+                    To maintain reliable operation during high-concurrency event traffic, the application environment was built around optimized server-side logic:
+                </p>
+                <ol class="project-narrative-list" style="list-style-type: decimal;">
+                    <li>
+                        <strong>User Authentication &amp; Profile Integrity:</strong> 
+                        Implements secure session-state authentication layers, allowing participants to cleanly register, log in, and lock in unique profiles before testing their development knowledge without risking session collisions.
+                    </li>
+                    <li>
+                        <strong>Real-Time Dynamic Scoring Engine:</strong> 
+                        Features an automated calculations engine handling score states programmatically based on validation trees. Results are dynamically processed and compiled via the server instantly upon submission.
+                    </li>
+                </ol>
+
+                <p>
+                    The backend environment is backed by a <strong>Node.js</strong> runtime configuration built with the <strong>Express.js</strong> framework to handle routing, coupled to a <strong>MongoDB</strong> database layer for document schemas, rapid queries, and structured tournament logging.
+                </p>
+            </article>
+
+            <div class="tech-use-container">
+                <div class="tech-main-title">Technology Used</div>
+                <div class="tech-grid-row">
+                    <div class="tech-column">
+                        <span class="tech-column-label">Frontend UI/UX:</span>
+                        <span class="tech-column-value">HTML5, Custom CSS3 Styling</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Backend Environment:</span>
+                        <span class="tech-column-value">Node.js Framework Layer</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Database Management:</span>
+                        <span class="tech-column-value">MongoDB Storage Tier</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">System Architecture:</span>
+                        <span class="tech-column-value">Model-View-Controller (MVC) Concept</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Core Engineering:</span>
+                        <span class="tech-column-value">Session Management, RESTful Routing, Secure DB Queries</span>
+                    </div>
+                </div>
+
+                <div class="project-media-container">
+                    <h2 class="gallery-title">System Interfaces &amp; Deployment Gallery</h2>
+                    
+                    <div class="project-landscape-container">
+                        <img src="projects/quiz/quiz1.jpg" alt="ADTS Project Screenshot Layout Overview" />
+                        <img src="projects/quiz/QUIZ2 (1).png" alt="ADTS Project Screenshot Layout Overview" />
+                        <img src="projects/quiz/QUIZ2 (2).png" alt="ADTS Project Screenshot Layout Overview" />
+                        <img src="projects/quiz/QUIZ4.jpg" alt="ADTS Project Screenshot Layout Overview" />
+                        <img src="projects/quiz/QUIZ6.jpg" alt="ADTS Project Screenshot Layout Overview" />
+                        <img src="projects/quiz/QUIZ5.jpg" alt="ADTS Project Screenshot Layout Overview" />
+                
+                    </div>
+                </div>
+            </div> <div class="tech-use-container" style="margin-top: 2.5rem;">
+                <div class="tech-main-title">Exhibitions Gallery</div>
+                
+              
+
+                <div class="AWARD-landscape-container">
+                    <img src="projects/quiz/gal1.jpg" alt="Open House Academic Presentation Showcase Showcase"/>
+                    <img src="projects/quiz/gL2.jpg" alt="Open House Academic Presentation Showcase Showcase"/>
+                    <img src="projects/quiz/gal3.jpg" alt="Open House Academic Presentation Showcase Showcase"/>
+                    <img src="projects/quiz/gal4.jpg" alt="Open House Academic Presentation Showcase Showcase"/>
+                </div>
+            </div> </section>
+    </div>
+
+    <div class="bottom-button">
+        <footer class="bottom-navigation-bar">
+            <a href="#" class="back-to-dashboard-link" onclick="loadPage('projects.html'); return false;">&larr; Back to Projects</a>
+        </footer>
+    </div>
+</div>

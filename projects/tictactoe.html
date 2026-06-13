@@ -1,61 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ADTS Project - Pretzil Joy Vivares</title>
-  <style>
-          * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-          font-family: Arial, sans-serif;
-  }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      font-family: Arial, sans-serif;
-      color: #222;
-    }
-    h2 {
-      color: #333;
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-    p {
-      line-height: 1.6;
-    }
-    a.back-link {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #0056b3;
-      text-decoration: none;
-    }
-    a.back-link:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+<link rel="stylesheet" href="../projects/projects.css">
 
-
-
-  <main>
-    <h2>TicTacToe Mobile Game</h2>
-    <img src="images/adts.png" alt="ADTS Project Screenshot" />
-    <p><strong>Technologies:</strong> Flutter, Dart, Node.js, MongoDB</p>
-    <p>Designed a simple two-player TicTacToe mobile game to showcase mobile app development and demonstrate core Flutter UI practices and game state management during a College Open House department exhibit..</p>
-    <a href="../projects.html" class="back-link">← Back to Projects</a>
-  </main>
-
-
+<div class="project-detail-wrapper">
+    <div class="project-detail-h1">
+        <h1>Project Details</h1>
+    </div>
   
-</body>
-</html>
+    <div class="project-detail-content">
+        <section id="tictactoe-project">
+          
+            <section class="project-detail-header">
+                <h2>TIC-TAC-TOE MOBILE GAME</h2>
+                <div class="project-detail-date">Mobile Application Development &amp; Academic Exhibition Live-Demo</div>
+            </section>
+
+            <!-- Project Introduction & Event Narrative -->
+            <article class="project-narrative-content">
+                <p>
+                    The <strong>Tic-Tac-Toe Mobile Application</strong> is a cross-platform mobile game engineered as an educational model and interactive deployment using <strong>Flutter and Dart</strong>. Developed to demonstrate rapid state management and reactive widget rendering, the app translates classic algorithmic turn logic into a fluid user experience.
+                </p>
+                <p>
+                    During the <strong>HTC Open House Event</strong>, this application was featured alongside full-stack web platforms to provide an end-to-end departmental showcase. The primary objective was to demystify software engineering for campus visitors, demonstrating precisely what happens behind the screen, how standalone components handle device computations, and how mobile application runtimes handle input parameters relative to traditional web systems.
+                </p>
+
+                <!-- Section: Live Exhibition Mechanics -->
+                <div class="project-narrative-subtitle">Open House Interactive Showcasing</div>
+                <ul class="project-narrative-list">
+                    <li>
+                        <strong>Behind-The-System Code Demos:</strong> Used as a live visual reference tool to display source code structures to prospective students. Visitors observed how Dart logic and Flutter's widget trees render into operational interface buttons and visual UI themes in real time.
+                    </li>
+                    <li>
+                        <strong>Web vs. Mobile Paradigms:</strong> Deployed as a comparative module to educate visitors on the operational differences between dynamic multi-tier websites (like the CETE Quiz Game) and client-focused mobile application processes.
+                    </li>
+                </ul>
+
+                <!-- Section: Technical Logic -->
+                <div class="project-narrative-subtitle">Application Mechanics &amp; Gameplay Flow</div>
+                <p>
+                    The game loop is structured to guide users through a smooth, intuitive mobile experience from setup to victory:
+                </p>
+                <ol class="project-narrative-list" style="list-style-type: decimal;">
+                    <li>
+                        <strong>Landing Page Token Selection:</strong> 
+                        Upon launching the application, users arrive at a landing screen where the two players custom-configure their match setup. Here, players choose their preferred game tiles (assigning who plays as 'X' and who plays as 'O') before initiating the session.
+                    </li>
+                    <li>
+                        <strong>Turn-Based Grid Gameplay:</strong> 
+                        Once the match starts, players are routed to a clean, interactive 3x3 grid. The app dynamically tracks and switches player turns sequentially after each tap, updating the tapped cell instantly with the active player's chosen tile while locking out previously filled spaces.
+                    </li>
+                    <li>
+                        <strong>Win Condition &amp; Match Reset:</strong> 
+                        The system continuously scans the grid layout after every move. As soon as a matching line of three tiles is achieved horizontally, vertically, or diagonally—or if all spaces fill up in a draw—the system freezes inputs, highlights the match outcome, and provides a single-tap restart feature to reset the board back to its baseline setup.
+                    </li>
+                </ol>
+
+                <p>
+                    Code compilation and layout prototyping were handled inside <strong>VS Code</strong>, utilizing <strong>GitHub</strong> for secure codebase version tracking. Development optimizations, logical validations, and error-handling routines were accelerated leveraging AI assistance via <strong>ChatGPT and Gemini</strong> models.
+                </p>
+            </article>
+
+            <!-- CONTAINER 1: Technology Matrix & Gallery Container Box -->
+            <div class="tech-use-container">
+                <div class="tech-main-title">Technology Used</div>
+                <div class="tech-grid-row">
+                    <div class="tech-column">
+                        <span class="tech-column-label">Mobile Framework:</span>
+                        <span class="tech-column-value">Flutter (Cross-Platform)</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Programming Language:</span>
+                        <span class="tech-column-value">Dart (Object-Oriented &amp; Reactive)</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">UI Component Design:</span>
+                        <span class="tech-column-value">Declarative Widget Trees &amp; Interactive Grids</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Core Engineering:</span>
+                        <span class="tech-column-value">Matrix Checking Algorithms, State Management, Reset Lifecycles</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Repository Control:</span>
+                        <span class="tech-column-value">GitHub Workspace Management</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Tools &amp; Frameworks:</span>
+                        <span class="tech-column-value">VS Code, Gemini, ChatGPT AI Assistants</span>
+                    </div>
+                </div>
+
+                <!-- System Interfaces Gallery -->
+                <div class="project-media-container">
+                    <h2 class="gallery-title">System Interfaces &amp; Deployment Gallery</h2>
+                    <div class="project-portrait-grid">
+                        <img src="projects/tictactoe/1.jpg" alt="Tic-Tac-Toe App Main Menu Layout" />
+                        <img src="projects/tictactoe/2.jpg" alt="Players Choosing tiles" />
+                        <img src="projects/tictactoe/3.jpg" alt="Game Screen" />
+                        <img src="projects/tictactoe/4.jpg" alt="Winner Notification" />
+                        <img src="projects/tictactoe/5.jpg" alt="Draw Notification" />
+                    </div>
+                </div>
+            </div> <!-- Closes CONTAINER 1 -->
+
+
+            <!-- CONTAINER 2: Separate Box for Exhibitions -->
+            <div class="tech-use-container" style="margin-top: 2.5rem;">
+                <div class="tech-main-title">Exhibitions Gallery</div>
+
+                <div class="tech-grid-row">
+                    <div class="tech-column">
+                        <span class="tech-column-label">Exhibition Venue:</span>
+                        <span class="tech-column-value">HTC Open House Presentation Stage</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Core Presentation:</span>
+                        <span class="tech-column-value">Live Mobile System Architecture Demonstration</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Educational Goal:</span>
+                        <span class="tech-column-value">Showcasing the logic behind application source files, widget builds, and compile targets</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Target Audience:</span>
+                        <span class="tech-column-value">School Visitors such as students and educators</span>
+                    </div>
+                </div>
+
+                <!-- Centered Exhibition Images (Inherits your custom landscape frame size & border fix) -->
+                <div class="AWARD-landscape-container">
+                    <img src="projects/tictactoe/I1.jpg" alt="Live mobile demonstration with Open House visitors"/>
+                    <img src="projects/tictactoe/I2.jpg" alt="Source code walkthrough and compilation explanation"/>
+                    <img src="projects/tictactoe/I3.jpg" alt="Department booth interactive technology showcase"/>
+                </div>
+            </div> <!-- Closes CONTAINER 2 -->
+
+        </section>
+    </div>
+
+    <div class="bottom-button">
+        <footer class="bottom-navigation-bar">
+            <a href="#" class="back-to-dashboard-link" onclick="loadPage('projects.html'); return false;">&larr; Back to Projects</a>
+        </footer>
+    </div>
+</div>

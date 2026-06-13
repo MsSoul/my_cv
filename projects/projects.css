@@ -64,6 +64,36 @@
   margin-bottom: 0; 
 }
 
+/* 2.1 CUSTOM SUBHEADINGS & LISTS FOR NARRATIVE
+========================================================================== */
+.project-narrative-subtitle {
+  font-family: Arial, sans-serif !important;
+  font-size: 1.2rem;
+  color: #4a5568;
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.project-narrative-list {
+  font-family: Arial, sans-serif !important;
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.project-narrative-list li {
+  font-family: Arial, sans-serif !important;
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  text-align: left; /* Overrides any paragraph justify rules */
+}
+
+.project-narrative-list li strong {
+  color: #333333; /* Slightly darker emphasis for system titles */
+}
+
 /* ==========================================================================
    3. SEPARATED MEDIA GRIDS (Portrait 4xRow & Full-Width Landscape)
    ========================================================================== */
@@ -100,7 +130,7 @@
 
 .project-portrait-grid img {
   width: 100%;
-  height: auto;
+  height: 400px; /* Fixed height to maintain consistent portrait presentation */
   object-fit: contain; 
   background-color: rgba(255, 255, 255, 0.4); 
   padding: 5px;
@@ -120,14 +150,42 @@
 }
 
 .project-landscape-container img {
-  width: 100%;
-  height: auto; /* Preserves natural landscape dimensions */
-  object-fit: cover;
+  width: 100%; /* Fixed width to maintain consistent landscape presentation */
+  height: 100%; /* Preserves natural landscape dimensions */
+  object-fit: contain;
   border-radius: 8px;
   border: 1px solid rgba(226, 232, 240, 0.6);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.4); 
+   padding: 5px;                              
+  box-sizing: border-box;  
+  align-self: center; /* Centers the image within the container for a balanced look */
+  
 }
 
+.AWARD-landscape-container {
+  display: flex;
+  justify-content: center; /* Centers the images horizontally */
+  align-items: center;     /* Centers them vertically if needed */
+  flex-wrap: wrap;         /* Allows images to wrap to the next line smoothly */
+  gap: 15px;               /* Adds clean spacing between individual images */
+  margin-top: 1.5rem;
+}
+.AWARD-landscape-container img {
+  width: 600px;
+  height: 100%; 
+  /* CHANGE THIS FROM 'cover' TO 'contain' */
+  object-fit: contain; 
+  
+  /* These lines keep your border and padding beautifully visible */
+  padding: 5px;                              
+  box-sizing: border-box;                    
+  
+  border-radius: 8px;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.4); 
+}
 /* ==========================================================================
    4. RIGHT-ALIGNED INTERACTIVE BACK BUTTON
    ========================================================================== */

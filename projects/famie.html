@@ -1,58 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ADTS Project - Pretzil Joy Vivares</title>
-  <style>
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      font-family: Arial, sans-serif;
-      color: #222;
-    }
-    h2 {
-      color: #333;
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-    p {
-      line-height: 1.6;
-    }
-    a.back-link {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #0056b3;
-      text-decoration: none;
-    }
-    a.back-link:hover {
-      text-decoration: underline;
-    }
-          * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-          font-family: Arial, sans-serif;
-  }
-  </style>
-</head>
-<body>
+<link rel="stylesheet" href="../projects/projects.css">
+
+<div class="project-detail-wrapper">
+    <div class="project-detail-h1">
+        <h1>Project Details</h1>
+    </div>
+  
+    <div class="project-detail-content">
+        <section id="famie-project">
+          
+            <section class="project-detail-header">
+                <h2>FAMIE PARENTAL CONTROL SYSTEM</h2>
+                <div class="project-detail-date">Research, Full-Stack Development &amp; Implementation</div>
+            </section>
+
+            <article class="project-narrative-content">
+                <p>
+                    <strong>"Optimizing Screen Time Management For Children's Devices: Leveraging Token Bucket And Time-Based Algorithms In A Famie Parental Control System"</strong> is a computer science research study and software solution engineered to address modern screen-time dependencies and digital safety. 
+                </p>
+                <p>
+                    The comprehensive study consists of three distinct systems working in unison: a Parent Application, a Child Companion Application, and a Centralized Web Administration panel. On this project, <strong>I was assigned to build the entire full-stack architecture of both the Famie (Parent) and FamKid (Child) mobile applications</strong>—handling everything from the cross-platform user interfaces to the backend REST API workflows and database routing.
+                </p>
+
+                <div class="project-narrative-subtitle">The Three Core Systems</div>
+                <ul class="project-narrative-list">
+                    <li>
+                        <strong>Famie (Parent App):</strong> The mobile controller built for parents to manage their children's digital habits. It provides an intuitive, real-time command center where parents can easily link a child's device by scanning a generated QR code, configure individual profiles, and set specific time schedules to control exactly when kids are allowed to use or not use their devices.
+                    </li>
+                    <li>
+                        <strong>FamKid (Child App):</strong> The companion mobile application installed on the child's device. Upon setup, it generates a unique QR code containing the device name and Android ID to securely identify the child's phone. Once the allowed time schedule begins, the background monitoring algorithm starts executing. As soon as the permitted time ends, the device is automatically locked. It can only be unlocked when a new allowed time schedule begins or if a parent manually overrides the lock using their custom set PIN code.
+                    </li>
+                    <li>
+                        <strong>Admin Dashboard:</strong> The centralized web management console. This platform provides an administrative overview, tracking overall registration telemetry, monitoring global system logs, and providing dynamic configuration management over application themes.
+                    </li>
+                </ul>
+
+                <div class="project-narrative-subtitle">Core Algorithms &amp; How They Work</div>
+                <p>
+                    To ensure accurate, robust, and automated time enforcement without relying on heavy continuous server tracking, the system architecture operates on a dual-algorithmic engine:
+                </p>
+                <ol class="project-narrative-list" style="list-style-type: decimal;">
+                    <li>
+                        <strong>Token Bucket Algorithm (Real-Time Time Depletion):</strong> 
+                        This algorithm treats screen time as a collection of virtual "tokens," where 1 token equals 1 second of permitted usage. When a child opens a configured schedule or device block, the <em>FamKid</em> application checks the bucket capacity. As long as tokens are present, screen access is granted, and tokens are depleted continuously second-by-second while the screen remains active. If a parent dynamically grants bonus minutes via the <em>Famie</em> app, the backend injects tokens immediately into the bucket. Once the bucket runs completely out of tokens (reaches 0), the application triggers a device restriction overlay to stop usage.
+                    </li>
+                    <li>
+                        <strong>Time-Based Algorithm (Automated System Reset):</strong> 
+                        To maintain standard daily schedules, the system implements a time-based scheduling engine managed on the server side. Utilizing automated cron-job handlers within the Node.js backend environment, the system executes global updates at exactly 12:00 AM (Midnight) every day. This automated sweep refreshes the document matrices in the database, resets the active day logs, and replenishes the children's daily token buckets back to their baseline parent-configured allowances for the new day.
+                    </li>
+                </ol>
+
+                <p>
+                    The complete full-stack environment backing the <em>Famie</em> and <em>FamKid</em> apps consists of a <strong>Node.js and Express.js</strong> REST API layer coupled with <strong>MongoDB Atlas</strong> for handling non-relational document data structures, cloud-hosted and deployed via <strong>Heroku</strong>. Code compilation was completed inside <strong>VS Code</strong> using <strong>GitHub</strong> for repository control, with feature optimization accelerated through AI debugging models.
+                </p>
+            </article>
+
+            <div class="tech-use-container">
+                <div class="tech-main-title">Technology Used</div>
+                <div class="tech-grid-row">
+                    <div class="tech-column">
+                        <span class="tech-column-label">My Full-Stack Apps:</span>
+                        <span class="tech-column-value">Flutter, Dart (Famie &amp; FamKid)</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Backend API:</span>
+                        <span class="tech-column-value">Node.js, Express.js</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Database:</span>
+                        <span class="tech-column-value">MongoDB Atlas</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Cloud Hosting:</span>
+                        <span class="tech-column-value">Heroku Cloud Deployment</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Core Logic:</span>
+                        <span class="tech-column-value">Token Bucket, Time-Based Cron Scheduling</span>
+                    </div>
+                    <div class="tech-column">
+                        <span class="tech-column-label">Tools &amp; Frameworks:</span>
+                        <span class="tech-column-value">React.js (Admin Dashboard), VS Code, GitHub, Gemini, ChatGPT</span>
+                    </div>
+                </div>
+
+                <div class="project-media-container">
+                    <h2 class="gallery-title">System Interfaces & Deployment Gallery</h2>
+                     <div class="project-portrait-grid">
+                        <img src="../projects/famie/2.jpg" alt="Famie Parent App Welcome Screen" />
+                        <img src="../projects/famie/3.jpg" alt="Parent Registration &amp; Setup" />
+                        <img src="../projects/famie/4.jpg" alt="Famie Parent Dashboard Overview" />
+                        <img src="../projects/famie/10.jpg" alt="Screen Time &amp; App Limits Control" />
+                        <img src="../projects/famie/5.jpg" alt="Screen Time &amp; App Limits Control" />
+                        <img src="../projects/famie/6.jpg" alt="FamKid Child App Tracking Interface" />
+                        <img src="../projects/famie/7.jpg" alt="Child Device Restriction Overlay" />
+                        <img src="../projects/famie/11.jpg" alt="Screen Time &amp; App Limits Control" />
+                    </div>
+
+                    <div class="project-landscape-container">
+                        <img src="../projects/famie/1.jpg" alt="Database Connection &amp; API Testing Setup" />
+                    </div>
+                </div>
+
+            </div> <div class="tech-use-container" style="margin-top: 2.5rem;">
+                <div class="tech-main-title">Awards &amp; Recognitions</div>
+
+                    <div class="AWARD-landscape-container">
+                      <img src="../projects/famie/cert.jpg" alt="AJSTS Research Publication Certificate"/>
+                      <img src="../recentActivity/images/act18.png" alt="AJSTS Research Publication Feature"/>
+                        <img src="../training/images/psa-forum.jpg" alt="Certificate of Recognition - Top 10 Research Paper Finalist"  />
+                        <img src="../training/images/PSITS.jpg" alt="Certificate of Participation"  />
+                    </div>
+                </div>
+            </div>
+
+</div>
 
 
-  <main>
-    <h2>Famie and FamKid (Parental Control Applications)</h2>
-    <img src="images/adts.png" alt="ADTS Project Screenshot" />
-    <p><strong>Technologies:</strong> Flutter, Dart, Node.js, MongoDB Atlas, Heroku</p>
-    <p>Developed as part of the thesis "Optimizing Screen Time Management For Children's Devices: Leveraging Token Bucket And Time-Based Algorithms In A Famie Parental Control System," Famie (for parents) and FamKid (for children) are mobile apps that promote healthy digital habits using token bucket and time-based algorithms for screen time control, with secure device pairing via QR code scanning..</p>
-    <a href="../projects.html" class="back-link">← Back to Projects</a>
-  </main>
-
-</body>
-</html>
+    <div class="bottom-button">
+        <footer class="bottom-navigation-bar">
+            <a href="#" class="back-to-dashboard-link" onclick="loadPage('projects.html'); return false;">&larr; Back to Projects</a>
+        </footer>
+    </div>
