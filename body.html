@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Pretzil Joy Vivares</title>
+    <link rel="prefetch" href="header.html">
+<link rel="prefetch" href="footer.html">
+<link rel="prefetch" href="mycontact.html">
+<link rel="prefetch" href="pages/aboutme.html">
        
     <style>
         body {
@@ -60,6 +64,75 @@
         .topic:hover h3 {
             background: #ddd;
         }
+
+        #loader {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ffe6ec, #fff5f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.icon-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.icon {
+    position: absolute;
+    inset: 0;
+    font-size: 4rem;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: iconCycle 5s infinite;
+}
+
+.icon:nth-child(1) { animation-delay: 0s; }
+.icon:nth-child(2) { animation-delay: 1s; }
+.icon:nth-child(3) { animation-delay: 2s; }
+.icon:nth-child(4) { animation-delay: 3s; }
+.icon:nth-child(5) { animation-delay: 4s; }
+
+@keyframes iconCycle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-20deg);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    30% {
+        opacity: 0;
+        transform: scale(1.4) rotate(20deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.loader-content p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ff6b81;
+    font-weight: bold;
+}
     </style>
 </head>
 
@@ -83,49 +156,67 @@
 
         // Load page content dynamically 
         async function loadPage(page) {
-            const res = await fetch('pages/' + page);
-            const htmlText = await res.text();
-            
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(htmlText, 'text/html');
-            
-            const bodyContent = doc.body ? doc.body.innerHTML : htmlText;
-            document.getElementById('content').innerHTML = bodyContent;
+    const res = await fetch('pages/' + page);
+    const htmlText = await res.text();
 
-            const styleSheets = doc.querySelectorAll('link[rel="stylesheet"]');
-            styleSheets.forEach(sheet => {
-                const href = sheet.getAttribute('href');
-                if (!document.querySelector(`link[href="${href}"]`)) {
-                    const linkClone = document.createElement('link');
-                    linkClone.rel = 'stylesheet';
-                    linkClone.href = href;
-                    document.head.appendChild(linkClone);
-                }
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+
+    const bodyContent = doc.body ? doc.body.innerHTML : htmlText;
+
+    // Hide content while loading
+    const content = document.getElementById('content');
+    content.style.visibility = 'hidden';
+
+    // Load styles first
+    const stylePromises = [];
+
+    doc.querySelectorAll('link[rel="stylesheet"]').forEach(sheet => {
+        const href = sheet.getAttribute('href');
+
+        if (!document.querySelector(`link[href="${href}"]`)) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+
+            const promise = new Promise(resolve => {
+                link.onload = resolve;
             });
 
-            const scripts = doc.querySelectorAll('script');
-            scripts.forEach(oldScript => {
-                const newScript = document.createElement('script');
-                if (oldScript.src) {
-                    newScript.src = oldScript.src;
-                } else {
-                    newScript.textContent = oldScript.textContent;
-                }
-                
-                setTimeout(() => {
-                    document.body.appendChild(newScript);
-                    newScript.remove(); 
-                }, 50);
-            });
-
-            // Highlight active nav link
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.toggle(
-                    'active',
-                    link.getAttribute('data-page') === page
-                );
-            });
+            stylePromises.push(promise);
+            document.head.appendChild(link);
         }
+    });
+
+    // Wait for all stylesheets
+    await Promise.all(stylePromises);
+
+    // Now show content
+    content.innerHTML = bodyContent;
+    content.style.visibility = 'visible';
+
+    // Execute scripts
+    doc.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+
+        if (oldScript.src) {
+            newScript.src = oldScript.src;
+        } else {
+            newScript.textContent = oldScript.textContent;
+        }
+
+        document.body.appendChild(newScript);
+        newScript.remove();
+    });
+
+    // Active nav
+    document.querySelectorAll('nav a').forEach(link => {
+        link.classList.toggle(
+            'active',
+            link.getAttribute('data-page') === page
+        );
+    });
+}
 
         // Bind navigation clicks
         function bindNavLinks() {
@@ -144,33 +235,32 @@
 
         // Initialize page layout elements
         async function init() {
-            // 1. First, wait for the header framework to load completely
-            await loadHTML('header', 'header.html');
-            await loadHTML('footer', 'footer.html');
+    await loadHTML('header', 'header.html');
+    await loadHTML('footer', 'footer.html');
+    await loadHTML('contact-info', 'mycontact.html');
 
-            // 2. FIXED: Load your global contact info directly into the header slot
-            // Now that header.html is fully in the DOM, 'contact-info' will be found perfectly!
-            await loadHTML('contact-info', 'mycontact.html');
+    bindNavLinks();
 
-            // 3. Set up nav link event handlers
-            bindNavLinks();
+    await loadPage('aboutme.html');
 
-            // 4. Default initial viewport load
-            await loadPage('aboutme.html');
-            //await loadPage('activities.html');
-            /*await loadPage('activities.html');
-            await loadPage('adts.html');
-            await loadPage('cete-quiz.html');
-            await loadPage('experience.html');
-            await loadPage('famie.html');
-            await loadPage('tictactoe.html');
-            await loadPage('skills.html');
-            await loadPage('projects.html');
-            await loadPage('trainings.html');        */   
-        }
+    document.getElementById('loader').style.display = 'none';
+}
 
         init();
     </script>
+
+<div id="loader">
+    <div class="loader-content">
+        <div class="icon-container">
+            <span class="icon">❤️</span>
+            <span class="icon">⭐</span>
+            <span class="icon">🤏</span>
+            <span class="icon">💖</span>
+            <span class="icon">✨</span>
+        </div>
+        <p>Loading...</p>
+    </div>
+</div>
 
 </body>
 </html>
