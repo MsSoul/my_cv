@@ -31,24 +31,32 @@
                     </li>
                 </ul>
 
-                <div class="project-narrative-subtitle">Core Features &amp; Architecture</div>
-                <p>
-                    To maintain reliable operation during high-concurrency event traffic, the application environment was built around optimized server-side logic:
-                </p>
-                <ol class="project-narrative-list" style="list-style-type: decimal;">
-                    <li>
-                        <strong>User Authentication &amp; Profile Integrity:</strong> 
-                        Implements secure session-state authentication layers, allowing participants to cleanly register, log in, and lock in unique profiles before testing their development knowledge without risking session collisions.
-                    </li>
-                    <li>
-                        <strong>Real-Time Dynamic Scoring Engine:</strong> 
-                        Features an automated calculations engine handling score states programmatically based on validation trees. Results are dynamically processed and compiled via the server instantly upon submission.
-                    </li>
-                </ol>
-
-                <p>
-                    The backend environment is backed by a <strong>Node.js</strong> runtime configuration built with the <strong>Express.js</strong> framework to handle routing, coupled to a <strong>MongoDB</strong> database layer for document schemas, rapid queries, and structured tournament logging.
-                </p>
+                <div class="project-narrative-subtitle">Mechanics &amp; Gameplay Flow</div>
+<p>
+    The game operates on a dynamic, fast-paced tournament loop designed to challenge participants while ensuring a unique experience for every player:
+</p>
+<ol class="project-narrative-list" style="list-style-type: decimal;">
+    <li>
+        <strong>Dynamic Question Selection &amp; Backend Shuffling:</strong> 
+        Players select a number from 1 to 50. To prevent predictability, the system maintains a pool of 50 questions that are automatically shuffled in the backend. Even if consecutive players select the same number, a fresh, non-repeating question is dynamically served.
+    </li>
+    <li>
+        <strong>The 20-Second Countdown Challenge:</strong> 
+        Once a number is chosen, the system displays the question and initiates a strict 20-second countdown timer, testing the player's quick-thinking and web development knowledge under pressure.
+    </li>
+    <li>
+        <strong>Automated Revelation &amp; Facilitator Validation:</strong> 
+        Upon expiration of the 20-second timer, the correct answer is instantly revealed on-screen. The event facilitator then physically confirms and records whether the player won or lost the round.
+    </li>
+    <li>
+        <strong>Victory Rewards &amp; Leaderboard Tracking:</strong> 
+        If the player answers correctly, the system prompts them to log their details (Name, Course, and Year Level) into the tournament database, unlocking an interactive "Mystery Gift" selection module.
+    </li>
+    <li>
+        <strong>Instant Replay Loop:</strong> 
+        If a player loses, the system resets the session state immediately, allowing them to jump right back into the queue and try their luck with a new shuffled question pool.
+    </li>
+</ol>
             </article>
 
             <div class="tech-use-container">
