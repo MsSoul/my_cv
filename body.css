@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'Camaufalge';
+    src: url('assets/Camaufalge.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+#content {
+    padding: 2rem;
+}
+
+nav a.active {
+    background: #666;
+    color: whitesmoke;
+}
+
+/* ====================================
+   TOPIC DROPDOWN STYLES (Kept intact)
+==================================== */
+.topics {
+    max-width: 700px;
+    margin: auto;
+}
+
+.topic {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.topic h3 {
+    margin: 0;
+    padding: 1rem;
+    background: #f5f5f5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.topic-content {
+    max-height: 0;
+    overflow: hidden;
+    background: white;
+    padding: 0 1rem;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.topic:hover .topic-content {
+    max-height: 400px;
+    padding: 1rem;
+}
+
+.topic:hover h3 {
+    background: #ddd;
+}
+
+/* ====================================
+   LOADER SETTING
+==================================== */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ffe6ec, #fff5f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.icon-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.icon {
+    position: absolute;
+    inset: 0;
+    font-size: 4rem;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: iconCycle 5s infinite;
+}
+
+.icon:nth-child(1) { animation-delay: 0s; }
+.icon:nth-child(2) { animation-delay: 1s; }
+.icon:nth-child(3) { animation-delay: 2s; }
+.icon:nth-child(4) { animation-delay: 3s; }
+.icon:nth-child(5) { animation-delay: 4s; }
+
+@keyframes iconCycle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-20deg);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1.2) rotate(10deg);
+    }
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    30% {
+        opacity: 0;
+        transform: scale(1.4) rotate(20deg);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.loader-content p {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #ff6b81;
+    font-weight: bold;
+}
+
+/* ====================================
+   FLOATING SOCIAL ICONS (FIXED)
+==================================== */
+.floating-social {
+    position: fixed !important;
+    right: 25px !important;
+    
+    /* Locks the cluster cleanly on the right viewport plane */
+    bottom: 30vh !important; 
+    top: auto !important;
+    transform: translateY(50%) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+
+    /* Clears any bounding height limits so your footer reads naturally */
+    height: auto !important;
+    width: auto !important;
+    z-index: 9999 !important;
+}
+
+.social-btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white !important;
+    font-size: 1.5rem;
+    background: #f37373;
+    box-shadow: 0 6px 15px rgba(243,115,115,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ICON LAYER */
+.social-btn i {
+    position: relative;
+    z-index: 5;
+}
+
+/* ROTATING CONIC BORDER EFFECT */
+.social-btn::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: conic-gradient(
+        white,
+        #ffb6c1,
+        white,
+        #ffb6c1,
+        white
+    );
+    opacity: 0;
+    z-index: 1;
+    animation: spinBorder 2.5s linear infinite;
+    transition: opacity 0.3s ease;
+}
+
+/* INNER BG MASK (Clean child span element instead of ::after) */
+.social-btn .inner-mask {
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: #f37373;
+    z-index: 2;
+}
+
+/* SHOW BORDER ON HOVER */
+.social-btn:hover::before {
+    opacity: 1;
+}
+
+/* HOVER SCALE + GLOW */
+.social-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.6);
+}
+
+@keyframes spinBorder {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ====================================
+   LABEL (LEFT SIDE HOVER TOOLTIP)
+==================================== */
+.social-btn::after {
+    /* FIX 1: Grabs the text straight from your HTML data-label attribute */
+    content: attr(data-label); 
+    
+    position: absolute;
+    /* CHANGED: Brought closer to the button (down from 75px) */
+    right: 68px; 
+    top: 50%;
+    /* CHANGED: Shorter initial drift (5px instead of 10px) for a tighter transition */
+    transform: translateY(-50%) translateX(5px);
+    background: #f37373;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    
+    /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+    
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 5px 15px rgba(243,115,115,0.35);
+    
+    /* FIX 2: Sit way on top of the spinning border effects */
+    z-index: 99; 
+}
+
+/* SHOW LABEL ON HOVER */
+.social-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0); /* Smooth slide-in */
+}
